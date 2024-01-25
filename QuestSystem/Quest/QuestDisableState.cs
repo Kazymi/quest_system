@@ -27,9 +27,11 @@ public class QuestDisableState : State
 
     public override void OnStateExit()
     {
+    //TODO change to event
         Bootstrap.Instance.GameData.ResourceUISpawner.SpawnNewUIObject(
             Bootstrap.Instance.GameData.iconManager.GetIcon(currentQuest.AddResource), currentQuest.AddResource,
             currentQuest.AddResourceAmount, Bootstrap.Instance.GameData.CharacterControllerSystem.Player.position);
+    //
         IsReadyToLeave = false;
         m_questUI.QuestPanel.gameObject.SetActive(false);
     }
